@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-src-git packages https://git.openwrt.org/feed/packages.git^5779614d267732fc382c1684202543fdbd924b4c
-src-git luci https://git.openwrt.org/project/luci.git^4d6d8bc5b0d7ee71c7b29b12e7e0c2e1e86cb268
-src-git routing https://git.openwrt.org/feed/routing.git^bb156bf355b54236a52279522fabbec1e8dd7043
-src-git telephony https://git.openwrt.org/feed/telephony.git^507eabe1b60458ceb1a535aec9d12c8be95706f0
-=======
 src-git packages https://git.openwrt.org/feed/packages.git^340d5ce71ee60c1d699e7e0ead9422bed6f8519f
 src-git luci https://git.openwrt.org/project/luci.git^bc17ef673f734ea8e7e696ba5735588da9111dcd
 src-git routing https://git.openwrt.org/feed/routing.git^c52779c05a4cf838c736327d8b042ee59f782331
 src-git telephony https://git.openwrt.org/feed/telephony.git^06a5323734038c3866f507787256581dba3d8522
->>>>>>> 5e4533cdd4... OpenWrt v18.06.5: adjust config defaults
+src-git rfn https://github.com/RF-Networks/openwrt-RFN-feed.git;openwrt-18.06

@@ -183,11 +183,7 @@ if VERSIONOPT
 	config VERSION_REPO
 		string
 		prompt "Release repository"
-<<<<<<< HEAD
-		default "http://downloads.openwrt.org/releases/18.06.4"
-=======
 		default "http://downloads.openwrt.org/releases/18.06.5"
->>>>>>> 5e4533cdd4... OpenWrt v18.06.5: adjust config defaults
 		help
 			This is the repository address embedded in the image, it defaults
 			to the trunk snapshot repo; the url may contain the following placeholders:
