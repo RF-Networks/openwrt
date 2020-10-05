@@ -1,21 +1,11 @@
---- a/drivers/net/usb/qmi_wwan.c
-+++ b/drivers/net/usb/qmi_wwan.c
-@@ -1283,6 +1283,7 @@ static const struct usb_device_id produc
- 	{QMI_QUIRK_SET_DTR(0x1e0e, 0x9001, 5)},	/* SIMCom 7100E, 7230E, 7600E ++ */
- 	{QMI_QUIRK_SET_DTR(0x2c7c, 0x0121, 4)},	/* Quectel EC21 Mini PCIe */
- 	{QMI_QUIRK_SET_DTR(0x2c7c, 0x0191, 4)},	/* Quectel EG91 */
-+    {QMI_QUIRK_SET_DTR(0x2c7c, 0x0195, 4)},	/* Quectel EG95 */
- 	{QMI_FIXED_INTF(0x2c7c, 0x0296, 4)},	/* Quectel BG96 */
- 	{QMI_QUIRK_SET_DTR(0x2cb7, 0x0104, 4)},	/* Fibocom NL678 series */
- 
 --- a/drivers/usb/class/cdc-acm.c
 +++ b/drivers/usb/class/cdc-acm.c
-@@ -1909,6 +1909,10 @@ static const struct usb_device_id acm_id
+@@ -1947,6 +1947,10 @@ static const struct usb_device_id acm_id
  	.driver_info = IGNORE_DEVICE,
  	},
  
 +    { USB_DEVICE(0x1519, 0x0020), /* Quectel 3G ACM only composition */
-+	.driver_info = SEND_ZERO_PACKET,
++    .driver_info = SEND_ZERO_PACKET,
 +	},
 +
  	{ USB_DEVICE(0x1bc7, 0x0021), /* Telit 3G ACM only composition */
@@ -23,23 +13,20 @@
  	},
 --- a/drivers/usb/serial/option.c
 +++ b/drivers/usb/serial/option.c
-@@ -247,6 +247,8 @@ static void option_instat_callback(struc
+@@ -248,6 +248,7 @@ static void option_instat_callback(struc
  /* These Quectel products use Quectel's vendor ID */
  #define QUECTEL_PRODUCT_EC21			0x0121
  #define QUECTEL_PRODUCT_EC25			0x0125
 +#define QUECTEL_PRODUCT_EG91			0x0191
-+#define QUECTEL_PRODUCT_EG95			0x0195
+ #define QUECTEL_PRODUCT_EG95			0x0195
  #define QUECTEL_PRODUCT_BG96			0x0296
  #define QUECTEL_PRODUCT_EP06			0x0306
- #define QUECTEL_PRODUCT_EM12			0x0512
-@@ -1087,6 +1089,10 @@ static const struct usb_device_id option
+@@ -1101,6 +1102,8 @@ static const struct usb_device_id option
  	  .driver_info = RSVD(4) },
  	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC25),
  	  .driver_info = RSVD(4) },
 +	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG91),
 +	  .driver_info = RSVD(4) },
-+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG95),
-+	  .driver_info = RSVD(4) },
- 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_BG96),
+ 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG95),
  	  .driver_info = RSVD(4) },
- 	{ USB_DEVICE_AND_INTERFACE_INFO(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EP06, 0xff, 0xff, 0xff),
+ 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_BG96),
