@@ -12,8 +12,7 @@ PKG_VERSION:=1.9.1
 PKG_RELEASE:=2.1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.us.tcpdump.org/release/ \
-        http://www.tcpdump.org/release/
+PKG_SOURCE_URL:=http://www.tcpdump.org/release/
 PKG_HASH:=635237637c5b619bcceba91900666b64d56ecb7be63f298f601ec786ce087094
 PKG_FIXUP:=patch-libtool
 
@@ -22,6 +21,7 @@ PKG_MAINTAINER:=Felix Fietkau <nbd@nbd.name>
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=0
 PKG_LICENSE:=BSD-3-Clause
+PKG_CPE_ID:=cpe:/a:tcpdump:libpcap
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/kernel.mk
